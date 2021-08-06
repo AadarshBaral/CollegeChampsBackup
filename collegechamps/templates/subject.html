@@ -1,0 +1,37 @@
+{% extends 'render.html' %} {% block showcase_nav_foot %}
+
+<div class="{{background}} showcase">
+  <div class="main-container">
+    <h1 class="showcase-maintext">{{heading}}</h1>
+    <p class="showcase-subtext">{{sub_header}}</p>
+    <a href="{{ url_for('blogs.blog_page') }}" class="{{button}} btn-secondary"
+      >View Notes</a
+    >
+  </div>
+</div>
+{% endblock showcase_nav_foot %} {% block sectionA %}
+<div>
+  <div class="main-container">
+    <div class="card-grid-container">
+      <!-- topic is a list with dictionary key value pairs 
+    topic = [{key : value}] -->
+      {% for topic in topics %} {% for key in topic %} {% set topic_header =
+      topic[key].replace('_',' ') %}
+      <div class="card {{cardBackground}} card1">
+        <h1 class="chapter-name">{{topic_header| capitalize}}</h1>
+        <div class="line"></div>
+        {% set route = topic[key] %} {%set main_route = "subjects.%s" % route %}
+        <a href="{{ url_for(main_route) }}" class="btn-primary">Start </a>
+      </div>
+      {% endfor %} {% endfor %}
+    </div>
+  </div>
+</div>
+  {% endblock sectionA %} {% if 'user' in session %}
+  <a
+    class="add_post_logo"
+    href="{{url_for('blogs.postNew',parameter = 'index')}}"
+    >&#x2b;</a
+  >
+  {% endif %}
+

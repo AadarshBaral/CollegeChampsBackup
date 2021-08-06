@@ -1,0 +1,50 @@
+<!-- <h1>{{title}}</h1>
+<form method="POST" enctype="multipart/form-data" action="">
+  {% if parameter == 'index' %}
+  <p>Post on index page</p>
+  {{ form.hidden_tag() }} {{form.title.label()}} {{form.title()}}
+  <br />
+  {{form.content.label()}} {{form.content()}}
+  <br />
+  {{form.subtitle.label}} {{form.subtitle}}
+  <br />
+  {{form.slug.label}} {{form.slug}}
+  <br />
+  {{form.to_redirect.label()}} {{form.to_redirect}}
+  <br />
+  <input name="pic" type="file" />
+  <br />
+  {{ form.submit(class="btn btn-outline-info")  }}
+  {% if parameter == 'set_page' %}
+  <p>You are posting on set page</p>
+  {{ form.hidden_tag() }}
+  {{form.title.label()}} {{form.title()}}
+  <br />
+  {{form.content.label()}} {{form.content()}}
+  <br />
+  {{form.subtitle.label}} {{form.subtitle}}
+  <br />
+  {{form.slug.label}} {{form.slug}}
+  <br />
+  {{form.price.label}} {{form.price}}
+
+  <br />
+  {{ form.submit(class="btn btn-outline-info")  }}
+
+    {% if parameter == 'blog_page' %} {{ form.hidden_tag() }}
+    {{form.title.label()}} {{form.title()}}
+
+    <br />
+    {{form.content.label()}} {{form.content()}}
+    <br />
+    {{form.subtitle.label}} {{form.subtitle}}
+    <br />
+
+    <input name="pic" type="file" />
+    <br />
+    {{form.slug.label}} {{form.slug}}
+    <br />
+
+  {{ form.submit(class="btn btn-outline-info")  }}
+</form>
+ {% endif %} {%endif%} {%endif%} -->

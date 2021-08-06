@@ -1,0 +1,134 @@
+{% extends "render.html" %}
+{% block showcase_nav_foot %}
+<!-- end of navbar -->
+<div class="showcase {{background}} ">
+  <div class="main-container">
+    <h1 id = 'animate'class="showcase-maintext">{{heading}}</h1>
+    <p class="showcase-subtext">{{sub_header}}</p>
+    <a href="subject1.html" class="{{button}} btn-secondary">Practice Now</a>
+  </div>
+</div>
+{% endblock showcase_nav_foot %}
+<!-- new section test -->
+{% block sectionA %}
+  
+
+<div class="container-post">
+<div class="blog-heading">
+  <p>Notes</p>
+</div>
+<div >
+  <div class="blog-new-card-grid-post">
+    <div class="slideshow-container">
+      {% for note in notes %}
+      <div class="mySlides fade">
+        <a href="{{ url_for('blogs.note_ids',note_id = note.id) }}">
+        <h1 class="carousel_heading card-b2">{{note.title}}</h1>
+      </a>
+      </div>
+      {%endfor%}
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+  </div>
+  <div class="blog-heading">
+    <p>Articles</p>
+  </div>
+  <div class="post-container">
+    {% for post in posts %} {% set img_name = 'profile_pics/' + post.img %} {%
+    set img_name = 'profile_pics/' + post.img %} {% set day =
+    post.date_posted.strftime('%B') %} {% set day_num = post.date_posted.day%}
+    {% set year = post.date_posted.year%}
+    {% set slug_t = post.title.replace(" ","-").lower() %}
+    <div class="blog-new-card">
+      <div class="blog-card card-b2">
+        <div class="meta">
+          <div class="photo" style="background-image: url()">
+            <img src="{{url_for('static', filename = img_name)}}" alt="error" / width = 225px height = 200px >
+          </div>
+          <ul class="details">
+            <!-- <li class="author"><a href="#">Admin</a></li> -->
+            <!-- <li class="date">{{post.date_posted}}</li> -->
+          </ul>
+        </div>
+
+        <div class="description">
+          <a href="{{url_for('blogs.post',post_id=post.id,slug = slug_t)}}"
+            ><h6 class="title">{{post.title}}</h6></a
+          >
+          <small>{{day_num}} {{day}} {{year}}</small>
+          <!-- <h2>Opening a door to the future</h2> -->
+          <div class="fit-text"><p class>{{post.subtitle}}</p></div>
+
+          <p class="read-more">
+            <a href="{{url_for('blogs.post',post_id=post.id,slug = slug_t)}}">Read More</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</div>
+<!-- {% if 'user' in session %}
+
+<a class="add_post_logo" href="{{url_for('blogs.postNew',parameter = 'blog')}}"
+  >&#x2b;</a
+>
+  
+{% endif %} -->
+
+<!-- End of shwocase  -->
+<!-- <div class="sc-3 showcase">
+      <div class="main-container">
+        <h1 class="showcase-maintext  mb-1">IOE / IOM</h1>
+    
+        <a href="ioe.html" class="sc3-btn btn-secondary">Continue <i class="fas fa-chevron-right"></i> </a>
+      </div>
+    </div> -->
+
+<!-- End of chemistry section -->
+<!-- <div class="sc-4 showcase">
+  <div class="main-container">
+    <div class="g1">
+      <h1 class="showcase-maintext  mb-1">+2 Entrance</h1>
+      <a href="subject1.html" class="btn-secondary sc4-btn">Continue <i class="fas fa-chevron-right"></i></a>
+    </div>
+    <div class="g2">
+  </div>
+  
+  </div> -->
+
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides((slideIndex += n));
+  }
+
+  function currentSlide(n) {
+    showSlides((slideIndex = n));
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+</script>
+{% endblock sectionA %}

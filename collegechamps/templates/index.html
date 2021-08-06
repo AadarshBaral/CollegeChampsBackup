@@ -1,0 +1,76 @@
+{% extends 'render.html' %}
+<!-- end of navbar -->
+{% block showcase_nav_foot %}
+
+<div class="showcase">
+  <div class="main-container">
+    <h1 id="animate" class="showcase-maintext">Not Decided</h1>
+    <p class="showcase-subtext">Name Not Decided Yet..</p>
+    <a href="#s1" class="btn-secondary">Practice Now</a>
+
+    <a class="no-2-btn btn-secondary" href="{{ url_for('blogs.blog_page') }}">
+      Blog Page</a
+    >
+  </div>
+</div>
+{% endblock showcase_nav_foot %} {% block sectionA %}
+<div>
+  {% for post in posts %} {% set img_name = 'profile_pics/' + post.img %} {% set
+  img_name = 'profile_pics/' + post.img %} {% set day =
+  post.date_posted.strftime('%B') %} {% set day_num = post.date_posted.day%} {%
+  set year = post.date_posted.year%}
+  {% if post.to_redirect %} {% set redirect = post.to_redirect %} {%
+    else%} {% set redirect = 'main.home' %} {% endif %}
+  <div class="blog-new-card">
+    <div class="blog-card">
+      <div class="meta">
+        <div class="photo" style="background-image: url()">
+          <img src="{{url_for('static', filename = img_name)}}" alt="error" /
+         width = 225px height = 200px >
+        </div>
+        <ul class="details">
+          <!-- <li class="author"><a href="#">Admin</a></li> -->
+          <!-- <li class="date">{{post.date_posted}}</li> -->
+        </ul>
+      </div>
+
+      <div class="description"> 
+        <!-- <a href="{{url_for('blogs.post',post_id=post.id,slug = post.title)}}" -->
+          {% set slug_t = post.title.replace(" ","-").lower() %}
+          
+        
+         <a href="{{ url_for(redirect) }}""><h6 class="title">{{post.title}}</h6></a>
+        <!-- <small>{{day_num}} {{day}} {{year}}</small> -->
+        <!-- <h2>Opening a door to the future</h2> -->
+        <div class="fit-text"><p class>{{post.subtitle}}</p></div>
+
+        <p class="read-more">
+          <a href="{{ url_for(redirect) }}"">Read More</a>
+        </p>
+        
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% include 'sidebar.html' %}
+<!-- {% if 'user' in session %}
+<a class="add_post_logo" href="{{url_for('blogs.postNew',parameter = 'index')}}"
+  >&#x2b;</a
+>
+{% endif %} -->
+
+<!-- <script>
+  $("a").click(function () {
+    $("html, body").animate(
+      {
+        scrollTop: $($(this).attr("href")).offset().top,
+      },
+      500
+    );
+    return false;
+  });
+</script> -->
+
+{% endblock sectionA %}

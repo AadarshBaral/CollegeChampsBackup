@@ -1,0 +1,65 @@
+{% include 'navbar.html' %}
+    <div class="showcase">
+      <div class="main-container">
+        <h1 id = "animate" class="showcase-maintext">Prepare .. IOE</h1>
+        <p class="showcase-subtext">With the most asked old questions</p>
+        <a href="subject1.html" class="btn-secondary">Practice Now</a>
+      </div>
+    </div>
+   <!-- End of shwocase  -->
+    <div class="sc-5 showcase">
+      <div class="main-container">
+        <h1 class="showcase-maintext  mb-1 sc-5-text">Full Mock Test</h1>
+
+        <a href="{{url_for('subjects.maths')}}" class="sc5-btn btn-secondary">Give a test</a>
+      </div>
+    </div>
+    <!-- end of showcase physics -->
+
+    <div class="sc-1 showcase">
+      <div class="main-container">
+        <h1 class="showcase-maintext  mb-1">Physics</h1>
+    
+        <a href="{{url_for('subjects.physics')}}" class="sc1-btn btn-secondary">Visit Physics Section</a>
+      </div>
+    </div>
+    <!-- end of section mock test -->
+
+<div class="sc-2 showcase">
+  <div class="main-container">
+    <div class="g1">
+      <h1 class="showcase-maintext  mb-1">Chemistry</h1>
+      <a href="{{url_for('subjects.chemistry')}}" class="btn-secondary sc2-btn">Visit Chemistry Section</a>
+    </div>
+    <div class="g2">
+  </div>
+  </div>
+</div>
+
+<!-- End of chemistry section -->
+<div class="sc-3 showcase">
+  <div class="main-container">
+    <div class="g1">
+      <h1 class="showcase-maintext  mb-1">Biology</h1>
+      <a href="{{url_for('subjects.biology')}}"class="btn-secondary sc3-btn">Visit Biology Section</a>
+    </div>
+    <div class="g2">
+  </div>
+  </div>
+</div>
+<!-- end of mathematics section -->
+<div class="sc-4 showcase">
+  <div class="main-container">
+    <div class="g1">
+      <h1 class="showcase-maintext  mb-1">Mathematics</h1>
+      <a href="{{url_for('subjects.maths')}}" class="btn-secondary sc4-btn">Visit Maths Section</a>
+    </div>
+    <div class="g2">
+  </div>
+  </div>
+</div>
+
+
+
+<script src="./script/script.js"></script>
+{% include 'footer.html' %}

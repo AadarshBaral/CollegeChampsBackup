@@ -1,0 +1,66 @@
+{% for set in sets %}
+
+      
+          <!-- <h2>Opening a door to the future</h2> -->
+          <div class="fit-text"><p class>{{post.subtitle}}</p></div>
+          {% if set.to_redirect %}
+          {% set set_redirect = set.to_redirect %}
+          
+          <p class="read-more">
+            <a href="{{ url_for(set_redirect) }}">Visit</a>
+          </p>
+          {% else %}
+          {% set set_redirect = 'main.home' %}
+          <p class="read-more">
+            <a href="{{ url_for(set_redirect) }}">Visit</a>
+          </p>
+          {% endif %}
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+{% endfor %} {% endfor %}
+
+
+
+
+
+{% if form.username.errors %}
+<div class="invalid-feedback">
+    {% for error in form.username.errors %}
+        {{ error }}
+    {% endfor %}
+</div>
+{% endif %}
+{% if form.email.errors %}
+<div class="invalid-feedback">
+    {% for error in form.email.errors %}
+        <span>{{ error }}</span>
+    {% endfor %}
+</div>
+{% endif %}
+{% if form.password.errors %}
+<div class="invalid-feedback">
+    {% for error in form.password.errors %}
+        <span>{{ error }}</span>
+    {% endfor %}
+</div>
+{% else %}
+{% endif %}
+
+{% if form.confirm_password.errors %}
+<div class="invalid-feedback">
+    {% for error in form.confirm_password.errors %}
+        <span>{{ error }}</span>
+    {% endfor %}
+</div>
+    {% endif %}
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+{% extends 'render.html' %}
+{% block showcase_nav_foot %}
+  
+
+  
+<div class="showcase">
+  <div class="main-container">
+    <h1 id="animate" class="showcase-maintext">Not Decided</h1>
+    <p class="showcase-subtext">Name Not Decided Yet..</p>
+    <a href="{{url_for('main.home')}}" class="btn-secondary"
+      >Practice Now <i class="fas fa-chevron-down"></i
+    ></a>
+  </div>
+</div>
+{%endblock%}
+{% block sectionA %}
+  <div>
+    <div class="main-container">
+      <div class="card-grid-container">
+        <div class="card card1 less-margin ">
+          <div class="img_link_grid">
+           <img class= 'card_image' src="{{ url_for('static', filename='img/maths-min.png') }}"alt="">
+            <div>
+              <h1 class="chapter-name">Algebra</h1>
+           
+              <a href="hall.html" class="btn-primary">Start </a>
+            </div>
+          </div>
+        </div>
+        <div class="card card1 less-margin ">
+          <div class="img_link_grid">
+           <img class= 'card_image' src="{{ url_for('static', filename='img/maths-min.png') }}"alt="">
+            <div>
+              <h1 class="chapter-name">Physics</h1>
+           
+              <a href="hall.html" class="btn-primary">Start </a>
+            </div>
+          </div>
+        </div>
+        <div class="card card1 less-margin ">
+          <div class="img_link_grid">
+           <img class= 'card_image' src="{{ url_for('static', filename='img/maths-min.png') }}" alt="">
+            <div>
+              <h1 class="chapter-name">Biology</h1>
+           
+              <a href="hall.html" class="btn-primary">Start </a>
+            </div>
+          </div>
+        </div>
+        <div class="card card1 less-margin ">
+          <div class="img_link_grid">
+           <img class= 'card_image' src="{{ url_for('static', filename='img/maths-min.png') }}"alt="">
+            <div>
+              <h1 class="chapter-name">Chemistry</h1>
+           
+              <a href="hall.html" class="btn-primary">Start </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock sectionA %}
+  </body>
+</html>

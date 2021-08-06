@@ -1,0 +1,37 @@
+{% extends 'layout.html' %} {% block navbar %}
+
+<!-- the mcq section -->
+<div class="full-body-back"></div>
+<div class="mcq-margin">
+  <div class="mcq-grid-container">
+    <div class="mcq-header">
+      <p class="head">Subject Practice Test</p>
+      <p class="total">Total Questions:20</p>
+      <p class="total">Duration: 00: 00: 00 hr</p>
+    </div>
+    <hr />
+    <div class="mcq-card">
+      <div class="mcq-top mcq-option">1 ) What is the full form of IUPAC</div>
+      <div class="mcq-option">a ) Its under pressure again crap!</div>
+      <div class="mcq-option">b ) Is the umbrella packed already carl?</div>
+      <div class="mcq-option">c ) The answer is not here..</div>
+      <div class="mcq-option">d ) Its undeniably pretty and cute</div>
+    </div>
+    <div class="mcq-card">
+      <div class="mcq-top mcq-option">1 ) What is the full form of IUPAC</div>
+      <div class="mcq-option">a ) Its under pressure again crap!</div>
+      <div class="mcq-option">b ) Is the umbrella packed already carl?</div>
+      <div class="mcq-option">c ) The answer is not here..</div>
+      <div class="mcq-option">d ) Its undeniably pretty and cute</div>
+    </div>
+    <div class="mcq-card">
+      <div class="mcq-top mcq-option">1 ) What is the full form of IUPAC</div>
+      <div class="mcq-option">a ) Its under pressure again crap!</div>
+      <div class="mcq-option">b ) Is the umbrella packed already carl?</div>
+      <div class="mcq-option">c ) The answer is not here..</div>
+      <div class="mcq-option">d ) Its undeniably pretty and cute</div>
+    </div>
+  </div>
+</div>
+
+{% endblock navbar %}

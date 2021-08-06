@@ -1,0 +1,245 @@
+/*PEN STYLES*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f1f1f1;
+  font-family: "Rubik", sans-serif;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #0FF0B3 0%, #036ED9 100%);
+  line-height: 1.4;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 0;
+  margin: auto;
+  position: relative;
+  margin: auto;
+  margin-bottom: 5%;
+}
+
+@media (max-width: 1080px) {
+  .blog-card {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-card {
+    margin-right: 0px;
+  }
+}
+
+.blog-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-card:hover .photo {
+  transform: scale(1.1) rotate(-2deg);
+}
+
+.blog-card .meta {
+  position: relative;
+  z-index: 0;
+  height: 200px;
+}
+
+.blog-card .photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.2s;
+}
+
+@media (max-width: 639px) {
+  .blog-card .photo {
+    display: flex;
+    justify-content: center;
+    margin-right: 0px;
+  }
+}
+
+.blog-card .details,
+.blog-card .details ul {
+  margin: auto;
+  padding: 0;
+  list-style: none;
+}
+
+.blog-card .details {
+  top: 0;
+  bottom: 0;
+  left: -120%;
+  margin: auto;
+  transition: left 0.2s;
+  padding: 10px;
+  width: 200px;
+  font-size: 1rem;
+}
+
+.blog-card .details a {
+  text-decoration: none;
+}
+
+.blog-card .details ul li {
+  display: inline-block;
+}
+
+.blog-card .details .author:before {
+  margin-right: 10px;
+  content: "";
+}
+
+.blog-card .details .date:before {
+  margin-right: 10px;
+  content: "";
+}
+
+.blog-card .details .tags ul:before {
+  content: " ";
+  margin-right: 10px;
+}
+
+.blog-card .details .tags li {
+  margin-right: 2px;
+}
+
+.blog-card .details .tags li:first-child {
+  margin-left: -4px;
+}
+
+.blog-card .description {
+  padding: 1rem 1rem 2rem 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.blog-card .description .title {
+  hyphens: auto;
+  text-align: left;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+@media (max-width: 639px) {
+  .blog-card .description {
+    padding: 1rem;
+  }
+}
+
+.blog-card .description h1,
+.blog-card .description h1 {
+  line-height: 1;
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.blog-card .description h2 {
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #484848;
+  margin-top: 5px;
+}
+
+.blog-card .description .read-more {
+  text-align: right;
+  position: absolute;
+  font-size: 18px;
+}
+
+@media (max-width: 639px) {
+  .blog-card .description .read-more {
+    position: static;
+  }
+}
+
+.blog-card .description .read-more a {
+  color: #061a46;
+  display: inline-block;
+  position: relative;
+  background: #194ab5;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.blog-card .description .read-more a:after {
+  content: ">";
+  opacity: 0;
+  vertical-align: middle;
+  transition: margin 0.3s, opacity 0.3s;
+}
+
+.blog-card .description .read-more a:hover:after {
+  margin-left: 10px;
+  opacity: 1;
+}
+
+.blog-card p {
+  position: relative;
+  margin: 1rem 0 0;
+}
+
+.blog-card:hover .details {
+  left: 0%;
+}
+
+@media (min-width: 639px) {
+  .blog-card {
+    flex-direction: row;
+    max-width: 700px;
+  }
+  .blog-card .meta {
+    flex-basis: 40%;
+  }
+}
+
+@media (max-width: 639px) {
+  .blog-card {
+    max-width: 500px;
+  }
+}
+
+.blog-card.alt {
+  flex-direction: row-reverse;
+}
+
+.blog-card.alt .description:before {
+  left: inherit;
+  right: -10px;
+}
+
+.blog-card.alt .details {
+  padding-left: 25px;
+}
+
+@media (max-width: 640px) {
+  .blog-card .description {
+    border: none;
+    border-top: 1px solid black;
+    margin-top: 10px;
+  }
+}
+
+.card-b1 {
+  background: linear-gradient(135deg, #12daa5 0%, #0468cd 100%);
+}
+
+.card-b2 {
+  background: linear-gradient(135deg, #ba76fe 0%, #7267f4 100%);
+}

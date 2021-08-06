@@ -1,0 +1,37 @@
+{% extends 'render.html' %}
+{% block showcase_nav_foot %}
+<div class="login-container">
+    <div class="login-card">
+        <div class="inside-container">
+            <form method = "POST" action="">
+                {{ form.hidden_tag() }}
+                <br>
+                {{form.username()}}
+               <br>
+               {{form.password()}}
+               <br>
+               {{ form.submit(class='sc5-btn btn btn-secondary ') }}
+            
+            </form>
+        </div>
+  
+</div>
+</div>
+{% endblock showcase_nav_foot %}
+
+
+  <script src="./script/script.js"></script>
+
+
+<!-- 
+
+<form method = 'POST' action="">
+{{ form.hidden_tag() }}
+    {{form.username.label()}}
+    {{form.username()}}
+    <br>
+    {{form.password.label()}}
+    {{form.password()}}
+    <br>
+    {{form.submit()}}
+</form> -->

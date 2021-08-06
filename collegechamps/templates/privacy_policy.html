@@ -1,0 +1,111 @@
+<style>
+    .para-container {
+    background: rgb(217, 229, 226);
+    padding: 20px;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: auto;
+
+    border-radius: 10px;
+    hyphens: auto;
+  }
+  .para-container a {
+    color: rgb(0, 0, 94);
+    text-decoration: underline;
+  }
+  .priv-pol {
+    font-weight: lighter;
+    font-size: 50px;
+   
+  }
+</style>
+
+{% extends 'render.html' %}
+
+<title>CollegeChamp</title>
+
+
+
+<body>
+  {% block showcase_nav_foot %}
+  <div class="showcase">
+    <div class="main-container">
+      <h1 class="showcase-maintext">Privacy Policy</h1>
+      <p  class="showcase-subtext"><em>College Champs </em></p>
+      <br />
+      <!-- <a href="ioe.html" class="btn-secondary">Practice Now <i class="fas fa-chevron-down"></i></a> -->
+    </div>
+  </div>
+
+  {% endblock showcase_nav_foot %}
+  <!-- end of navbar -->
+  {% block sectionA %}
+  <div>
+    {% if parameters == 'privacy_policy' %}
+      
+    <div class="container">
+      <div class="para-container">
+
+        <h1 class="priv-pol">Notice!</h1>
+        <hr />
+        <br />
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis
+          nobis esse repellat illo. Nisi illo dolorum, error optio fugit totam
+          tempora asperiores dolore, quisquam, unde placeat magnam excepturi!
+          Molestias numquam delectus perferendis neque assumenda, totam magnam
+          eaque aliquam dolorem rem <a href="#">okay</a> harum maxime fugiat
+          similique debitis est optio reprehenderit impedit, deleniti amet
+          laborum ad dolores Lorem ipsum dolor sit, amet consectetur adipisicing
+          elit. Suscipit aspernatur eligendi vero odio iure quasi similique
+          nulla distinctio eveniet autem, maiores fugit debitis quaerat rem
+          consectetur velit! Ab aperiam accusamus commodi? Nostrum magni
+          obcaecati provident minus nam cumque al <br /><br />
+          ias eligendi exercitationem autem odio! Optio expedita doloribus error
+          repellat esse dolorum, delectus reiciendis sit cum, aperiam ipsam qui,
+          saepe neque eligendi accusantium? Qui incidunt maxime saepe dolorum
+          blanditiis quo, minus aspernatur libero totam expedita. Dolorum iste
+          reiciendis illum eveniet corrupti inventore cupiditate dignissimos
+          minima cum consequatur omnis, velit sequi impedit modi officiis quia
+          aperiam sed est, dolorem corporis excepturi vitae? Maxime. Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Adipisci ex veniam
+          quisquam exercitationem tenetur cumque accusamus natus eaque, earum
+          aliquid amet, doloremque dolore a, sint consequatur dicta? Dolorum
+          ducimus obcaecati repellat possimus nisi delectus, perferendis iusto
+          provident alias praesentium excepturi nemo. A enim vero nobis
+          asperiores provident accusantium nulla, ullam quam necessitatibus
+          dolor at quasi beatae recusandae quia iure consequuntur rerum autem
+          incidunt fugiat quibusdam <br /><br />
+          reiciendis, aspernatur molestiae. Iste fuga corporis omnis velit totam
+          quibusdam deserunt, excepturi expedita, beatae architecto libero!
+          Similique neque vitae iure esse molestiae, sapiente eaque. Libero odit
+          minus placeat nemo tenetur perspiciatis in asperiores aliquid,
+          repudiandae officia dignissimos possimus doloribus ab, nam itaque a
+          consectetur, eligendi ea nisi. Doloribus laboriosam dicta aut ipsum
+          animi at nulla. Nisi ex hic vero optio repudiandae dignissimos,
+          aspernatur, ducimus et culpa dolores, qui at. Unde et natus omnis
+          tempora voluptatem, autem amet possimus iure? Ipsam dolor provident
+          alias non aspernatur accusamus sint. Minima necessitatibus sequi,
+          consequatur sunt sit tempore quis deleniti? Mollitia molestias numquam
+          rem autem optio, itaque tempore nam hic velit deleniti perferendis
+          corrupti quod ratione exercitationem voluptatem, similique minus?
+          Optio ratione suscipit voluptatibus nihil ab nulla quibusdam iure
+          vitae consectetur ipsum eum, aliquam quam cumque rerum, commodi enim!
+        </p>
+      </div>
+
+      <!-- <footer>
+    <div class="main-footer">
+      <p class = 'footer-text'>Aadarsh Baral 	&copy;CollegeChamp 2021 </p>
+    </div>
+  </footer> -->
+</div> 
+    {% endif %}
+
+    {% if parameters == 'credits' %}
+     <h1 class="priv-pol">{{parameters | capitalize}}</h1>
+     
+    {% endif %}
+  </div>
+  {% endblock sectionA %}
+</body>

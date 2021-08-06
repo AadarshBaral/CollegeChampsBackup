@@ -1,0 +1,31 @@
+{% include 'navbar.html' %}
+<div class="login-container">
+  <div class="login-card">
+    <div class="inside-container">
+
+      <div class="oauth all">
+        <a href="#"><i class="fab fa-google all"></i>Login With Google</a>
+      </div>
+      <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <br />
+        {{form.email()}}
+        <br />
+        {{form.password()}}
+        <br />
+        {{ form.submit(class='sc5-btn btn btn-secondary ') }}
+        <p class="already">
+          To create a new account,
+          <a class="linklog-in" href="{{url_for('users.register')}}">SignUp</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="./script/script.js"></script>
+<br>
+<br>
+<br>
+
+{% include 'footer.html' %}

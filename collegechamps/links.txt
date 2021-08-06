@@ -1,0 +1,65 @@
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+
+<script type="text/javascript"
+src="{{ url_for('static/script', filename='script.js') }}"></script>
+
+git push -u origin master
+https://vigorous-haibt-85b298.netlify.app/
+
+stylesheet
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+
+<!-- {% set img_name = 'profile_pics/' + post.img %}
+<img src="{{url_for('static', filename = img_name)}}" alt="error">  -->
+
+
+
+
+
+///
+///
+///
+///
+///
+///
+///
+///
+  {% for post in posts %} {% set img_name = 'profile_pics/' + post.img %} {% set
+  img_name = 'profile_pics/' + post.img %}
+
+  <div class="blog-new-card-grid">
+    <div class="blog-new-card">
+      <div class="blog-card card-b1">
+        <div class="meta">
+          <div class="photo" style="background-image: url()">
+            <img src="{{url_for('static', filename = img_name)}}" alt="error" />
+          </div>
+
+          <ul class="details">
+            <!-- <li class="author"><a href="#">Admin</a></li> -->
+            <!-- <li class="date">{{post.date_posted}}</li> -->
+          </ul>
+        </div>
+
+        {% if post.to_redirect %} {% set redirect = post.to_redirect %} {%
+        else%} {% set redirect = 'main.home' %} {% endif %}
+        <div class="description">
+          <a href="{{ url_for(redirect) }}"
+            ><h6 class="title">{{post.title}}</h6></a
+          >
+
+          <!-- <h2>Opening a door to the future</h2> -->
+          <div class="fit-text"><p class>{{post.subtitle}}</p></div>
+
+          <p class="read-more">
+            <a href="{{ url_for(redirect) }}">Visit</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+

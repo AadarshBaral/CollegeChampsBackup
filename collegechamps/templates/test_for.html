@@ -1,0 +1,7 @@
+{% if 'user' in session %}
+<a
+  class="add_post_logo"
+  href="{{url_for('blogs.postNew',parameter = 'index')}}"
+  >&#x2b;</a
+>
+{% endif %}

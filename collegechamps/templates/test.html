@@ -1,0 +1,95 @@
+{% extends 'render.html' %}
+{% block test %}
+<div class="showcase">
+    <div class="main-container">
+      <h1 id="animate" class="showcase-maintext">Not Decided</h1>
+      <p class="showcase-subtext">Name Not Decided Yet..</p>
+      <a href="#s1" class="btn-secondary"
+        >Practice Now</a> 
+       
+      <a class="no-2-btn btn-secondary" href="{{ url_for('blogs.blog_page') }}"> Blog Page</a> 
+    </div>
+  </div>
+{% endblock test %}
+{% block sectionA %}
+           <div class="blog-new-card-grid">
+        <div class="blog-new-card">
+        <div class="blog-card">
+          <div class="meta">
+            <div
+              class="photo"
+              style="background-image: url(./img/chemistry-min.png)"
+            ></div>
+            <ul class="details">
+              <li class="author"><a href="#">John Doe</a></li>
+              <li class="date">Aug. 24, 2015</li>
+            </ul>
+          </div>
+          <a href="">
+            <div class="description">
+              <h1>What is Engineering?</h1>
+              <!-- <h2>Opening a door to the future</h2> -->
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eu</p>
+              <p class="read-more">
+                <a href="#">Read More</a>
+              </p>
+            </div>
+          </a>
+        </div>
+    
+        </div>
+        <div>
+        <div class="blog-new-card">
+        <div class="blog-card">
+          <div class="meta">
+            <div
+              class="photo"
+              style="background-image: url(./img/chemistry-min.png)"
+            ></div>
+            <ul class="details">
+              <li class="author"><a href="#">John Doe</a></li>
+              <li class="date">Aug. 24, 2015</li>
+            </ul>
+          </div>
+          <a href="">
+            <div class="description">
+              <h1>What is Engineering?</h1>
+              <!-- <h2>Opening a door to the future</h2> -->
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eu</p>
+              <p c  lass="read-more">
+                <a href="#">Read More</a>
+              </p>
+            </div>
+          </a>
+        </div>
+    </div>
+    
+        </div>
+        <div class="blog-new-card">
+        <div class="blog-card">
+          <div class="meta">
+            <div
+              class="photo"
+              style="background-image: url(./img/chemistry-min.png)"
+            ></div>
+            <ul class="details">
+              <li class="author"><a href="#">John Doe</a></li>
+              <li class="date">Aug. 24, 2015</li>
+            </ul>
+          </div>
+          <a href="">
+            <div class="description">
+              <h1>What is Engineering?</h1>
+              <!-- <h2>Opening a door to the future</h2> -->
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eu</p>
+              <p class="read-more">
+                <a href="#">Read More</a>
+              </p>
+            </div>
+          </a>
+        </div>
+    
+        </div>
+      </div>
+     
+{% endblock  %}

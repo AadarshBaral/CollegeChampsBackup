@@ -1,0 +1,79 @@
+{% include 'navbar.html' %}
+<style>
+  .invalid-feedback {
+    background: rgb(255, 179, 179);
+    color: red;
+    border: 2px solid red;
+    padding: 5px;
+    margin-bottom: 2px;
+    /* margin-top: 5px;; */
+    border-radius: 10px;
+    width: 100%;
+  }
+</style>
+
+<div class="login-container">
+  <div class="login-card">
+    {% if login_register %}
+    <p class="login_register">{{login_register}}</p>
+    {% else %}
+    <p class="login_register">Register</p>
+    {% endif %}
+
+    <div class="inside-container">
+      {% if form.username.errors %}
+      <div class="invalid-feedback">
+        {% for error in form.username.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </div>
+      {% endif %} {% if form.email.errors %}
+      <div class="invalid-feedback">
+        {% for error in form.email.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </div>
+      {% endif %} {% if form.password.errors %}
+      <div class="invalid-feedback">
+        {% for error in form.password.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </div>
+       {% endif %}
+       {% if form.confirm_password.errors %}
+<div class="invalid-feedback">
+    {% for error in form.confirm_password.errors %}
+        <span>{{ error }}</span>
+    {% endfor %}
+</div>
+    {% endif %}
+      <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <!-- {{ form.username.label(class = 'form_labels') }} -->
+        <br />
+        {{form.username()}}
+        <br />
+        <!-- {{form.email.label(class = 'form_labels')}} -->
+        {{form.email()}}
+        <br />
+        <!-- {{form.password.label(class = 'form_labels')}} -->
+        {{form.password()}}
+        <br />
+        <!-- {{form.confirm_password.label(class = 'form_labels')}} -->
+        {{form.confirm_password()}}
+        <br />
+        {{ form.submit(class='sc5-btn btn btn-secondary ') }}
+
+        <p class="already">
+          Already have an acount?
+          <a class="linklog-in" href="{{url_for('users.login')}}">Login</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="./script/script.js"></script>
+<br>
+<br>  
+{% extends 'footer.html' %}

@@ -1,0 +1,49 @@
+{% extends 'layout.html' %} {% block navbar %}
+<!-- new section test -->
+<title>
+  {% if title %}
+    {{title}}
+ 
+  {%else%}
+  Entrance Preparation
+  {% endif %}
+</title>
+<div class="showcase">
+  <div class="main-container">
+    <h1 id="animate" class="showcase-maintext">{{header}}</h1>
+    <p class="showcase-subtext">You can do it!</p>
+    <a href="s1" class="btn-secondary"
+      >Practice Now <i class="fas fa-chevron-down"></i
+    ></a>
+  </div>
+</div>
+<div class="s1"></div>
+<div class="set-containers">
+  <!--more margin than container-->
+  <div class="set-grid-container">
+    <!--the main gird with 2 colums-->
+    <div class="the-set-colection">
+      <!--with sets arranged in rows-->
+      {% for each_set in sets %}
+    <a href="{{ url_for('blogs.individual_set',set_id = each_set.id)  }}">
+      <div class="practice-set shover">
+        <p class="practice-set-index">{{each_set.id}}</p>
+        <div class="line-set"></div>
+        <p class="set-content-text">{{each_set.title}}</p>
+        <p class="set-plan">{{each_set.price}}</p>
+      </div>
+    </a>
+      {% endfor %}
+    </div>
+    <div class="the-mock-test-collection">
+      <div class="test-set shover"><p class="set-text">Mock Test 1</p></div>
+      <div class="test-set shover"><p class="set-text">Mock Test 2</p></div>
+    </div>
+  </div>
+</div>
+{% if 'user' in session %}
+  
+<a class = 'add_post_logo' href="{{url_for('blogs.postNew',parameter = 'set_page')}}">&#x2b;</a>
+
+{% endif %}
+{% endblock navbar %}

@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+
+{% block navbar %}
+{% set day =
+    note.date_posted.strftime('%B') %} {% set day_num = note.date_posted.day%}
+    {% set year = note.date_posted.year%}
+<div class="showcase">
+    <div class="main-container">
+      <h1 id="animate" class="showcase-maintext">Blog Post Page</h1>
+      <p class="showcase-subtext">The page where nothing happens..</p>
+      <a href="#" class="btn-secondary"
+        >Practice Now <i class="fas fa-chevron-down"></i
+      ></a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="blog-grid-container">
+      <div class="blog-2-1">
+        <div>
+          <div class="written-blog-container">
+        
+         <p class="blog-title">{{note.title}}</p>
+     
+            
+            <div class="line col-1"></div>
+            <div class="social-grid-container">
+              <div class="author-date">
+                <p class="author">Posted By Administrator</p>
+                <p class="date-posted">{{day_num}} {{day}} {{year}}</p>
+              </div>
+              <div class="social-icons">
+                <p class="share">Share &#8618;</p>
+                <img
+                  class="social-icon"
+                  src="{{ url_for('static', filename='/img/facebook.png') }}"
+                  alt=""
+                />
+                <img
+                  class="social-icon"
+                  src="{{ url_for('static', filename='/img/twitter.png') }}"
+                  alt=""
+                />
+                <img
+                  class="social-icon"
+                  src="{{ url_for('static', filename='/img/instagram.png') }}"
+                  alt=""
+                />
+              </div>
+            </div>
+            <p class="blog-content">
+
+             {{note.content | safe}}
+           
+              
+            </p>
+          </div>
+          <div>
+            <!-- <aside class="sidebar">
+            <p class="side-bar-content">&#x21ac; Maths Notes</p>
+            <p class="side-bar-content">&#x21ac; Physics Notes</p>
+            <p class="side-bar-content">&#x21ac; Biology Notes</p>
+            <p class="side-bar-content">&#x21ac; English Notes</p>
+            <p class="side-bar-content">&#x21ac;Chemistry Notes</p>
+          </aside> -->
+          </div>
+        </div>
+        <!-- <div class="blog-featured-marin"> -->
+        <div class="card-blog-container">
+          <p class="featured_post">Featured</p>
+          <div class="line"></div>
+          <div class="card-grid-container">
+            {% for featured in feats %}
+        
+            <div class="card card1 less-margin">
+              <div class="img_link_grid">
+                <img class="card_image" src="./img/biology-min.png" alt="" />
+                <div> 
+                  <h1 class="chapter-name">{{featured.title}}</h1>
+                  <a href="{{url_for('blogs.featured_ids',feat_id =featured.id)}}" class="btn-primary">Start </a>
+                </div>
+              </div>
+            </div>
+
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+{% endblock navbar %}

@@ -1,0 +1,77 @@
+<style>
+  .post-form-container {
+    margin: auto;
+    max-width: 800px;
+  }
+
+  label {
+    font-size: 20;
+    color: balck;
+    padding : 10px;
+  }
+  input[type = submit]{
+    background : rgb(113, 165, 255);
+    font-size: 19px;
+    border : none;
+    border-radius: 5px;
+    padding : 10px;
+  }
+  input[type = submit]:hover{
+background: rgb(183, 239, 255);
+
+  }
+  input[type="text"],textarea, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+
+  }
+  textarea{
+    width : 800px;
+    height : 500px;
+  }
+  a{
+    text-decoration: none;
+  }
+  li{
+    list-style: none;
+  }
+
+</style>
+<a href="{{url_for('main.home')}}"><li class="btn-primary nav-link current">Home</li></a>
+<a href="{{url_for('blogs.dashboard')}}"><li class="btn-primary nav-link current">Dashboard</li></a>
+<div class="post-form-container">
+  <form method="POST" enctype="multipart/form-data" action="">
+    <p>Post on index page</p>
+    <h1>{{title}}</h1>
+    {{ form.hidden_tag() }}
+    <br />
+    {{form.title.label()}} {{form.title()}}
+    <br />
+    {{form.slug.label()}} {{form.slug}}
+    <br />
+    {{form.subject_title.label()}} {{form.subject_title}}
+    <br />
+    {{form.content.label()}} {{form.content()}}
+    <br />
+    {{form.subtitle.label()}} {{form.subtitle}}
+    <br />
+    <input value = 'def.png' name="pic" type="file" />
+    <br />
+    {{form.to_redirect.label()}} {{form.to_redirect}}
+    <br />
+    {{form.price.label()}} {{form.price}}
+    <br />
+    {{ form.submit(class="btn btn-outline-info") }}
+  </form>
+  <br>
+  <!-- {% for post in posts  %}
+  <a class = 'btn-for-dashboard' href="{{url_for('blogs.update_post',post_id=post.id)}}">Post and Continue Editing</a>
+  {% endfor %} -->
+</div>
+

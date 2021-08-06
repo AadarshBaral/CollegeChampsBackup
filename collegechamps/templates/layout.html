@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Open+Sans:wght@400;700;800&display=swap"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/card.css') }}">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="content-wrap">
+     <div class="main-nav">
+      <div class="container">
+        <a href="{{url_for('main.home')}}"><p class="logo"><span class="logo1">Not</span>Decided</p> </a>
+        
+        <a href="#" class="toggle-btn"><i class="fas fa-bars fa-2x"></i></a>
+        <a href="#" class="toggle-btn1"><i class="fas fa-times fa-2x"></i></a>
+        {% if current_user.is_authenticated %}
+        <ul class="nav-links">
+          <a href="{{url_for('main.home')}}"><li class="btn-primary nav-link current">Home</li></a>
+          <a href="{{url_for('main.ioe')}}"><li class="btn-primary nav-link current">IOE/IOM</li></a>
+          <a href="{{url_for('main.home')}}"><li class="btn-primary nav-link current">+2 Entrance</li></a>
+          <a href="{{url_for('blogs.blog_page')}}"><li class="btn-primary nav-link current">Blog  </li></a>
+          <a href="{{url_for('users.logout')}}"><li class="btn-primary nav-link current">LogOut</li></a>
+        </ul>
+        
+        {%else%}
+        <ul class="nav-links">
+          <a href="{{url_for('main.home')}}"><li class="btn-primary nav-link current">Home</li></a>
+          <a href="{{url_for('blogs.blog_page')}}"><li class="btn-primary nav-link current">Blog</li></a>
+          <a href="{{url_for('main.ioe')}}"><li class="btn-primary nav-link current">IOE/IOM</li></a>
+          <a href="{{url_for('blogs.set_page')}}"><li class="btn-primary nav-link current">+2 Entrance</li></a>
+          <a  href="{{url_for('users.login')}}"><li class=" btn-primary nav-link current">login</li></a>
+        </ul>
+        {% endif %}
+        <div class="col-md-8">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+              <div class="main-container flash-message ">
+            <div class="{{category}} box">
+                  <p class="flash-m">{{message}}</p>  
+                </div>
+              </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+        </div>
+      </div>
+
+
+</div>
+{% block navbar %}
+{% endblock navbar %}
+<title>
+  {% if title %}
+    {{title}}
+  {% else %}
+    IOE Entrance Preparation
+  {% endif %}
+</title>
+
+</div>
+
+  <div class="main-footer">
+   <footer>
+    <p class = 'footer-text'>Aadarsh Baral 	&copy;CollegeChamp 2021 </p>
+  </footer>
+  </div>
+
+</div>
+<script src="{{ url_for('static', filename='script/script.js') }}"></script>
+
+</body>
+</html>
+
+
+

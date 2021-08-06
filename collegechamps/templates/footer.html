@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Footer Design</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> -->
+</head>
+<body>
+
+  <footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>CollegeChamps</h4>
+  	 			<ul>
+  	 				<li><a href="#">About Developer</a></li>
+  	 				<li><a href="{{url_for('main.privacy_policy',parameter = 'privacy_policy')}}">Privacy Policy</a></li>
+  	 				<li><a href="{{url_for('main.privacy_policy',parameter = 'credits')}}">Credits></li>
+  	 				<li><a href="#">Contact Me</a></li>
+					   <li><a href="#">Donate</a></li>
+					   
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>IOE/IOM</h4>
+  	 			<ul>
+  	 				<li><a href="#">Physics</a></li>
+  	 				<li><a href="#">Mathematics</a></li>
+  	 				<li><a href="#">English</a></li>
+  	 				<li><a href="#">Biology</a></li>
+  	 				<li><a href="#">English</a></li>
+  	 				
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Others</h4>
+  	 			<ul>
+  	 				<li><a href="#">+2 Entrance</a></li>
+  	 				<li><a href="#">Blog Page</a></li>
+  	 			
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="#"><i class="fab fa-twitter"></i></a>
+  	 				<a href="#"><i class="fab fa-instagram"></i></a>
+  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 			</div>
+				   <p  class = 'copyright'>&#169; 2021 CollegeChamps Aadarsh Baral</p>
+
+  	 		</div>
+  	 	</div>
+		 
+  	 </div>
+  </footer>
+{% block footer %}
+  
+{% endblock footer %}
+</body>
+</html>
